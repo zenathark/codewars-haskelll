@@ -50,4 +50,4 @@ testSets =
 main :: IO ()
 main = hspec $ do
   describe "Exes and Ohs tests" $ do
-    traverse_ (\(input, expected) -> (test input expected)) testSets
+    traverse_ (uncurry test) testSets
